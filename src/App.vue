@@ -1,15 +1,17 @@
 <script>
+import Navbar from '@/components/Navbar.vue';
+import { RouterView } from 'vue-router';
+
+
 export default{
-  data() {
-    return{
-      name: 'John Doe'
-    }
+  components:{
+    Navbar
   }
 }
 </script>
 
 
 <template>
-  <h1>VUE APPLICATION {{ name }}</h1>
+  <Navbar/>
+  <RouterView/>
 </template>
-
