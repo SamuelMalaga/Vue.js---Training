@@ -2,7 +2,7 @@
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm install -g
 COPY . .
 RUN npm run build
 
@@ -13,4 +13,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
 # docker build -t training-vuejs-app .
-# socker run -it -p 8080:80 --rm --name vuejs-training-app training-vuejs-app
+# docker run -it -p 8080:80 --rm --name vuejs-training-app training-vuejs-app
+
+
+
